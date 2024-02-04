@@ -1,10 +1,10 @@
 <?php
 
-namespace Jarvisho\TaiwanSmsLaravel\Services;
+namespace Violetshih\TaiwanSmsLaravel\Services;
 
 use GuzzleHttp\Client;
-use Jarvisho\TaiwanSmsLaravel\Exceptions\InvalidSms;
-use Jarvisho\TaiwanSmsLaravel\Services\Contract\BaseSms;
+use Violetshih\TaiwanSmsLaravel\Exceptions\InvalidSms;
+use Violetshih\TaiwanSmsLaravel\Services\Contract\BaseSms;
 
 class Mitake extends BaseSms
 {
@@ -19,20 +19,21 @@ class Mitake extends BaseSms
 
         $this->url = config('taiwan_sms.services.mitake.url');
 
-        $this->client = new Client([
-            'timeout' => config('taiwan_sms.timeout', 5),
-            'connect_timeout' => config('taiwan_sms.timeout', 5),
-            'headers' => [
-                'Content-type' => 'application/x-www-form-urlencoded',
-            ]
-        ]);
+        $this->client = new Client();
     }
 
     public function send(): array
     {
         $data = $this->prepare();
 
-        $response = $this->client->post($this->url, $data);
+        $response = $this->client->post($this->url,[
+            'form_params' => $data,
+            'timeout' => config('taiwan_sms.timeout', 5),
+            'connect_timeout' => config('taiwan_sms.timeout', 5),
+            'headers' => [
+                'Content-type' => 'application/x-www-form-urlencoded',
+            ]
+        ]);
 
         if ($response->getStatusCode() != 200) {
             throw new InvalidSms('Mitake service failed');

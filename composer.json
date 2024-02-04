@@ -1,22 +1,22 @@
 {
-    "name": "jarvisho/taiwan-sms-laravel",
+    "name": "violetshih/taiwan-sms-laravel",
     "description": "Laravel wrapper package for the taiwan sms services",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Jarvisho\\TaiwanSmsLaravel\\": "src/"
+            "Violetshih\\TaiwanSmsLaravel\\": "src/"
         }
     },
     "version": "1.1.4",
     "autoload-dev": {
         "psr-4": {
-            "Jarvisho\\TaiwanSmsLaravel\\Tests\\": "tests/"
+            "Violetshih\\TaiwanSmsLaravel\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
-            "name": "Falcon Ho",
-            "email": "endless640c@gmail.com"
+            "name": "Violetshih",
+            "email": "sd12sd@gmail.com"
         }
     ],
     "require": {
@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jarvisho\\TaiwanSmsLaravel\\TaiwanSmsServiceProvider"
+                "Violetshih\\TaiwanSmsLaravel\\TaiwanSmsServiceProvider"
             ]
         }
     },

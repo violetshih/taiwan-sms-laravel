@@ -1,6 +1,6 @@
 <?php
 
-namespace Jarvisho\TaiwanSmsLaravel\Services\Contract;
+namespace Violetshih\TaiwanSmsLaravel\Services\Contract;
 
 abstract class BaseSms
 {

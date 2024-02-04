@@ -1,7 +1,7 @@
 <?php
-namespace Jarvisho\TaiwanSmsLaravel;
+namespace Violetshih\TaiwanSmsLaravel;
 
-use Jarvisho\TaiwanSmsLaravel\Exceptions\InvalidSms;
+use Violetshih\TaiwanSmsLaravel\Exceptions\InvalidSms;
 
 class TaiwanSms
 {

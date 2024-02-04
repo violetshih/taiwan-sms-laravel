@@ -1,8 +1,8 @@
 <?php
 
-namespace Jarvisho\TaiwanSmsLaravel\Tests;
+namespace Violetshih\TaiwanSmsLaravel\Tests;
 
-use Jarvisho\TaiwanSmsLaravel\TaiwanSmsServiceProvider;
+use Violetshih\TaiwanSmsLaravel\TaiwanSmsServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

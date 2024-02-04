@@ -1,5 +1,5 @@
 <?php
-namespace Jarvisho\TaiwanSmsLaravel\Services;
+namespace Violetshih\TaiwanSmsLaravel\Services;
 
 use GuzzleHttp\Client;
 use Infobip\Api\SendSmsApi;
@@ -7,8 +7,8 @@ use Infobip\Configuration;
 use Infobip\Model\SmsAdvancedTextualRequest;
 use Infobip\Model\SmsDestination;
 use Infobip\Model\SmsTextualMessage;
-use Jarvisho\TaiwanSmsLaravel\Exceptions\InvalidSms;
-use Jarvisho\TaiwanSmsLaravel\Services\Contract\BaseSms;
+use Violetshih\TaiwanSmsLaravel\Exceptions\InvalidSms;
+use Violetshih\TaiwanSmsLaravel\Services\Contract\BaseSms;
 
 class Infobip extends BaseSms
 {

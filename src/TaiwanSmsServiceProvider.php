@@ -1,5 +1,5 @@
 <?php
-namespace Jarvisho\TaiwanSmsLaravel;
+namespace Violetshih\TaiwanSmsLaravel;
 
 use Illuminate\Support\ServiceProvider;
 

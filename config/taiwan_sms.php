@@ -21,7 +21,7 @@ return [
             'password' => env('INFOBIP_PASSWORD'),
         ],
         'mitake' => [
-            'url' => env('MITAKE_URL', 'https://sms.mitake.com.tw/b2c/mtk/SmSend?CharsetURL=UTF-8'),
+            'url' => env('MITAKE_URL', 'https://smsapi.mitake.com.tw/api/mtk/SmSend?CharsetURL=UTF-8'),
             'username' => env('MITAKE_USERNAME'),
             'password' => env('MITAKE_PASSWORD'),
         ]

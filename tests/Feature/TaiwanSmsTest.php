@@ -1,10 +1,10 @@
 <?php
 
-namespace Jarvisho\TaiwanSmsLaravel\Tests\Feature;
+namespace Violetshih\TaiwanSmsLaravel\Tests\Feature;
 
 use Illuminate\Support\Str;
-use Jarvisho\TaiwanSmsLaravel\TaiwanSms;
-use Jarvisho\TaiwanSmsLaravel\Tests\TestCase;
+use Violetshih\TaiwanSmsLaravel\TaiwanSms;
+use Violetshih\TaiwanSmsLaravel\Tests\TestCase;
 
 class TaiwanSmsTest extends TestCase
 {
@@ -129,7 +129,7 @@ class TaiwanSmsTest extends TestCase
                     'password' => env('MITAKE_PASSWORD'),
                 ]
             ]]]);
-        expect(TaiwanSms::getPrimaryClassName())->toBe('Jarvisho\TaiwanSmsLaravel\Services\Every8d');
+        expect(TaiwanSms::getPrimaryClassName())->toBe('Violetshih\TaiwanSmsLaravel\Services\Every8d');
     }
 
     /** @test */
@@ -160,13 +160,13 @@ class TaiwanSmsTest extends TestCase
                     'password' => env('MITAKE_PASSWORD'),
                 ]
             ]]]);
-        expect(TaiwanSms::getFailoverClassName())->toBe('Jarvisho\TaiwanSmsLaravel\Services\Kotsms');
+        expect(TaiwanSms::getFailoverClassName())->toBe('Violetshih\TaiwanSmsLaravel\Services\Kotsms');
     }
 
     /** @test */
     function if_can_get_class_prefix()
     {
-        expect(TaiwanSms::getClassPrefix())->toBe('Jarvisho\TaiwanSmsLaravel\Services\\');
+        expect(TaiwanSms::getClassPrefix())->toBe('Violetshih\TaiwanSmsLaravel\Services\\');
     }
 }
 

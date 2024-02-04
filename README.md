@@ -7,8 +7,8 @@
 4. Infobip https://infobip.com/ 
 
 ## 安裝步驟 Steps:
-1. 安裝套件 $ composer require jarvisho/taiwan-sms-laravel
-2. 複製設定 $ php artisan vendor:publish --provider="Jarvisho\TaiwanSmsLaravel\TaiwanSmsServiceProvider"
+1. 安裝套件 $ composer require violetshih/taiwan-sms-laravel
+2. 複製設定 $ php artisan vendor:publish --provider="Violetshih\TaiwanSmsLaravel\TaiwanSmsServiceProvider"
 3. 查看設定 $ vim config/taiwan_sms.php
 4. 設置您的主要簡訊供應商(需先申請權限)與確認帳號密碼的 ENV key 
 5. 把帳號密碼設定到專安環境設定檔 $ vim .env
