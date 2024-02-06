@@ -10,6 +10,7 @@ class Mitake extends BaseSms
 {
     protected $client;
     protected $url;
+    protected $clean_destination;
 
     public function __construct()
     {
@@ -48,9 +49,9 @@ class Mitake extends BaseSms
     /**
      * @return bool
      */
-    public function isGlobalPhoneNumber(): bool
+    public function isTWGlobalPhoneNumber(): bool
     {
-        return strlen($this->destination) == 12 && substr($this->destination, 0, -9) == '886';
+        return strlen($this->clean_destination) >= 12 && substr($this->clean_destination, 0, 3) == '886';
     }
 
     /**
@@ -61,12 +62,16 @@ class Mitake extends BaseSms
     {
         if (empty($this->destination)) throw new InvalidSms('The empty destination is invalid.');
         if (empty($this->text)) throw new InvalidSms('The empty text is invalid.');
-        if ($this->isGlobalPhoneNumber()) $this->destination = '0' . substr($this->destination, 3, 9);
+        $this->clean_destination = str_replace('+', '', $this->destination);
+
+        if ($this->isTWGlobalPhoneNumber()){
+            $this->clean_destination = '0' . substr($this->clean_destination, -9);
+        }
 
         return [
             'username' => config('taiwan_sms.services.mitake.username'),
             'password' => config('taiwan_sms.services.mitake.password'),
-            'dstaddr' => $this->destination,
+            'dstaddr' => $this->clean_destination,
             'smbody' => iconv(mb_detect_encoding($this->text), "UTF-8", $this->text),
         ];
     }
